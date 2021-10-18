@@ -3,7 +3,34 @@
 }
 
 body {
-  min-height: 3000px;
+  min-height: 6000px;
   background-color: #3c3c3c;
-  padding-top: 69px;
+  padding-top: 135px;
+}
+
+.fixed-top-2 {
+  margin-top: 56px;
+  padding-top: 25px;
+  padding-bottom: -25px;
+  z-index: 1;
+}
+
+.ddf {
+  z-index: 2;
+}
+
+.most-viewed h1 {
+  color: aliceblue;
+}
+
+.most-viewed hr {
+  color: aliceblue;
+}
+
+.new-released h1 {
+  color: aliceblue;
+}
+
+.new-released hr {
+  color: aliceblue;
 }
