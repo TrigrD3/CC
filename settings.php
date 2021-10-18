@@ -14,7 +14,7 @@ include "head.php"
 
     
     <!-- My CSS -->
-    <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" href="assets/Style.css" />
     <title>Setting</title>
 </head>
 <body>
