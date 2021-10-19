@@ -1,5 +1,15 @@
 <?php 
-include "head.php"
+
+session_start();
+
+if(!isset($_SESSION["login"])){
+  header("Location: login.php");
+  exit;
+}
+
+include "head.php";
+require "config.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -62,9 +62,16 @@
         <li class="nav-item">
           <h5>Akun</h5>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="settings.php"><i class="bi bi-alarm-fill"></i></a>
+        <!-- dropdown setting/logout-->
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-alarm-fill"></i> </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="settings.php">Settings</a></li>
+            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+            
+          </ul>
         </li>
+        <!-- end dropdown  -->
       </ul>
     </div>
   </div>
