@@ -51,7 +51,7 @@ if (isset($_POST ["login"])){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>REGIS</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="assets/styleregis.css">
@@ -59,7 +59,9 @@ if (isset($_POST ["login"])){
 </head>
 <body>
   <?php if(isset($error)) : ?>
-  <p>username/password salah</p>
+     <script>
+          alert('username atau password salah')
+        </script>
   <?php endif; ?>
   <div class="cont">
     <div class="form sign-in">
@@ -68,11 +70,11 @@ if (isset($_POST ["login"])){
       <h2>Sign In</h2>
       <label>
         <span>Username</span>
-        <input type="text" name="username">
+        <input type="text" name="username" required>
       </label>
       <label>
         <span>Password</span>
-        <input type="password" name="password">
+        <input type="password" name="password" required>
       </label>
       <button class="submit" name="login" type="btn btn-primary">Sign In</button>
       <p class="forgot-pass">Forgot Password ?</p>
@@ -107,19 +109,19 @@ if (isset($_POST ["login"])){
         <form action="" method="post">
         <label>
           <span>Username</span>
-          <input type="text" name="username">
+          <input type="text" name="username" required>
         </label>
         <label>
           <span>Email</span>
-          <input type="email" name="email">
+          <input type="email" name="email" required>
         </label>
         <label>
           <span>Password</span>
-          <input type="password" name="password">
+          <input type="password" name="password" required>
         </label>
         <label>
           <span>Confirm Password</span>
-          <input type="password" name="passwordconf">
+          <input type="password" name="passwordconf" required>
         </label>
         <button class="submit" name="register" type="btn-primary">Sign Up Now</button>
       </div>
