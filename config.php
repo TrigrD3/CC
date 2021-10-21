@@ -1,6 +1,6 @@
 <?php 
 // koneksi database
-$conn = mysqli_connect('localhost','root1','');
+$conn = mysqli_connect('localhost','root','');
 
 mysqli_select_db($conn,'honbox');
 
