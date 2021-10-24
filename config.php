@@ -1,8 +1,8 @@
 <?php 
 // koneksi database
-$conn = mysqli_connect('127.0.0.1','azure','6#vWHD_$');
+$conn = mysqli_connect('localhost','root','');
 
-mysqli_select_db($conn,'localdb');
+mysqli_select_db($conn,'honbox');
 
 // $conn = new mysqli($_SERVER['honbox.c9p2nzfuehbl.ap-southeast-1.rds.amazonaws.com'], $_SERVER['trigrd'], $_SERVER['byzantine123'], $_SERVER['honbox'], $_SERVER['3306']);
 
