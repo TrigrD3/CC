@@ -1,10 +1,10 @@
 <?php 
 // koneksi database
-// $conn = mysqli_connect('localhost','root','');
+$conn = mysqli_connect('127.0.0.1','azure','6#vWHD_$');
 
-// mysqli_select_db($conn,'honbox');
+mysqli_select_db($conn,'localdb');
 
-$conn = new mysqli($_SERVER['honbox.c9p2nzfuehbl.ap-southeast-1.rds.amazonaws.com'], $_SERVER['trigrd'], $_SERVER['byzantine123'], $_SERVER['honbox'], $_SERVER['3306']);
+// $conn = new mysqli($_SERVER['honbox.c9p2nzfuehbl.ap-southeast-1.rds.amazonaws.com'], $_SERVER['trigrd'], $_SERVER['byzantine123'], $_SERVER['honbox'], $_SERVER['3306']);
 
 function registrasi ($data) {
     global $conn;
