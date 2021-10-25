@@ -9,7 +9,6 @@ $db = "localdb";
 
 $conn = mysqli_connect($server, $user, $password, $db);
 
-mysqli_select_db($conn,'honbox');
 
 // $conn = new mysqli($_SERVER['honbox.c9p2nzfuehbl.ap-southeast-1.rds.amazonaws.com'], $_SERVER['trigrd'], $_SERVER['byzantine123'], $_SERVER['honbox'], $_SERVER['3306']);
 
