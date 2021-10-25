@@ -1,6 +1,13 @@
 <?php 
 // koneksi database
-$conn = mysqli_connect('localhost','root','');
+$port = $_SERVER['WEBSITE_MYSQL_PORT'];
+$server = "localhost:$port";
+$user = "azure";
+$password = "6#vWHD_$";
+$db = "localdb";
+
+
+$conn = mysqli_connect($server, $user, $password, $db);
 
 mysqli_select_db($conn,'honbox');
 
