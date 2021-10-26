@@ -58,6 +58,34 @@ require "config.php";
   </ul>
 </div>
       </div>
+      <div class="col">
+      <div class="card" style="width: 18rem;">
+      <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
+  <div class="card-body">
+    <h5 class="card-title">Judul </h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <a href="#" class="card-link">New Chapter</a> </li>
+      <li class="list-group-item">
+      <a href="#" class="card-link">Previous Chapter</a> </li>
+  </ul>
+</div>
+      </div>
+      <div class="col">
+      <div class="card" style="width: 18rem;">
+      <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
+  <div class="card-body">
+    <h5 class="card-title">Judul </h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <a href="#" class="card-link">New Chapter</a> </li>
+      <li class="list-group-item">
+      <a href="#" class="card-link">Previous Chapter</a> </li>
+  </ul>
+</div>
+      </div>
     </div>
   </div>
 </div>
@@ -71,6 +99,34 @@ require "config.php";
     <h1>New Released</h1>
     <hr>
     <div class="row">
+      <div class="col">
+      <div class="card" style="width: 18rem;">
+      <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
+  <div class="card-body">
+    <h5 class="card-title">Judul </h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <a href="#" class="card-link">New Chapter</a> </li>
+      <li class="list-group-item">
+      <a href="#" class="card-link">Previous Chapter</a> </li>
+  </ul>
+</div>
+      </div>
+      <div class="col">
+      <div class="card" style="width: 18rem;">
+      <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
+  <div class="card-body">
+    <h5 class="card-title">Judul </h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <a href="#" class="card-link">New Chapter</a> </li>
+      <li class="list-group-item">
+      <a href="#" class="card-link">Previous Chapter</a> </li>
+  </ul>
+</div>
+      </div>
       <div class="col">
       <div class="card" style="width: 18rem;">
       <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
