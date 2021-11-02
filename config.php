@@ -1,5 +1,5 @@
 <?php 
-// koneksi database
+// koneksi database azure
 $port = $_SERVER['WEBSITE_MYSQL_PORT'];
 $server = "localhost:$port";
 $user = "azure";
@@ -8,6 +8,13 @@ $db = "localdb";
 
 
 $conn = mysqli_connect($server, $user, $password, $db);
+
+// koneksi database lokal
+// $conn = mysqli_connect('localhost','root','');
+
+// mysqli_select_db($conn,'honbox');
+
+// $komik = mysqli_query($conn, "SELECT * FROM komik");
 
 
 // $conn = new mysqli($_SERVER['honbox.c9p2nzfuehbl.ap-southeast-1.rds.amazonaws.com'], $_SERVER['trigrd'], $_SERVER['byzantine123'], $_SERVER['honbox'], $_SERVER['3306']);
@@ -44,6 +51,21 @@ function registrasi ($data) {
     return mysqli_affected_rows($conn);
 
 
+}
+
+function tampil ($data){
+    global $conn;
+    $judul = $data["judul"];
+    $synopsis = $data["synopsis"];
+    $chapter = $data["chapter"];
+    $author = $data["author"];
+    $genre = $data["genre"];
+    $release_date = $data["release_date"];
+    $publisher = $data["publisher"];
+    $cover = $data["cover"];
+
+    $result = mysqli_query($conn, "SELECT * FROM komik");
+    
 }
 ?>   
 

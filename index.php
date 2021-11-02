@@ -43,50 +43,25 @@ require "config.php";
   <div class="container">
     <h1>Most Viewed</h1>
     <hr>
+    <!-- perulangan untuk menampilkan data dari database -->
+    
     <div class="row">
+    <?php foreach ($komik as $row) : ?>
       <div class="col">
       <div class="card" style="width: 18rem;">
       <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
   <div class="card-body">
-    <h5 class="card-title">Judul </h5>
+    <h5 class="card-title"><?= $row['judul']; ?> </h5>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <a href="#" class="card-link">New Chapter</a> </li>
+      <a href="#" class="card-link"><?= $row['synopsis']; ?></a> </li>
       <li class="list-group-item">
-      <a href="#" class="card-link">Previous Chapter</a> </li>
+      <a href="#" class="card-link"><?= $row['chapter']; ?></a> </li>
   </ul>
 </div>
-      </div>
-      <div class="col">
-      <div class="card" style="width: 18rem;">
-      <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
-  <div class="card-body">
-    <h5 class="card-title">Judul </h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a href="#" class="card-link">New Chapter</a> </li>
-      <li class="list-group-item">
-      <a href="#" class="card-link">Previous Chapter</a> </li>
-  </ul>
-</div>
-      </div>
-      <div class="col">
-      <div class="card" style="width: 18rem;">
-      <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
-  <div class="card-body">
-    <h5 class="card-title">Judul </h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a href="#" class="card-link">New Chapter</a> </li>
-      <li class="list-group-item">
-      <a href="#" class="card-link">Previous Chapter</a> </li>
-  </ul>
-</div>
-      </div>
     </div>
+    <?php endforeach; ?>
   </div>
 </div>
     </section>
@@ -99,49 +74,22 @@ require "config.php";
     <h1>New Released</h1>
     <hr>
     <div class="row">
+    <?php foreach ($komik as $row) : ?>
       <div class="col">
       <div class="card" style="width: 18rem;">
       <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
   <div class="card-body">
-    <h5 class="card-title">Judul </h5>
+    <h5 class="card-title"><?= $row['judul']; ?> </h5>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <a href="#" class="card-link">New Chapter</a> </li>
+      <a href="#" class="card-link"><?= $row['synopsis']; ?></a> </li>
       <li class="list-group-item">
-      <a href="#" class="card-link">Previous Chapter</a> </li>
+      <a href="#" class="card-link"><?= $row['chapter']; ?></a> </li>
   </ul>
 </div>
-      </div>
-      <div class="col">
-      <div class="card" style="width: 18rem;">
-      <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
-  <div class="card-body">
-    <h5 class="card-title">Judul </h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a href="#" class="card-link">New Chapter</a> </li>
-      <li class="list-group-item">
-      <a href="#" class="card-link">Previous Chapter</a> </li>
-  </ul>
-</div>
-      </div>
-      <div class="col">
-      <div class="card" style="width: 18rem;">
-      <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
-  <div class="card-body">
-    <h5 class="card-title">Judul </h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a href="#" class="card-link">New Chapter</a> </li>
-      <li class="list-group-item">
-      <a href="#" class="card-link">Previous Chapter</a> </li>
-  </ul>
-</div>
-      </div>
     </div>
+    <?php endforeach; ?>
   </div>
 </div>
     </section>
