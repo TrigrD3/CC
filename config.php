@@ -14,7 +14,8 @@ $conn = mysqli_connect($server, $user, $password, $db);
 
 // mysqli_select_db($conn,'honbox');
 
-// $komik = mysqli_query($conn, "SELECT * FROM komik");
+// var
+$komik = mysqli_query($conn, "SELECT * FROM komik"); 
 
 
 function registrasi ($data) {
