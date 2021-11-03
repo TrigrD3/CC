@@ -1,35 +1,33 @@
 <?php 
 include "head.php";
-$db = new mysqli("localhost","root", "", "cc"); 
-if ($db->connect_error) {  
-  die("Connection failed: " . $db->connect_error);  
-}
+require "config.php";
+
 $id = 1; //Sesuaikan dengan id manga
-$query = mysqli_query($db, "SELECT * FROM infokomik WHERE id = $id");
+$query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
 $data = mysqli_fetch_array($query);
 
 if (isset($_POST ['save'])){
-    global $db;
+    global $conn;
     $judul= $_POST['judul'];
-    $img= $_POST['image'];
+    $cover= $_POST['image'];
     $rating= $_POST['rating'];
     $author= $_POST['author'];
     $genre= $_POST['genre'];
-    $release= $_POST['release'];
-    $epublisher= $_POST['epublisher'];
-    $sumry= $_POST['summary'];
+    $release_date= $_POST['release'];
+    $publisher= $_POST['epublisher'];
+    $synopsis= $_POST['summary'];
 
     $q="UPDATE infokomik
         SET title ='$judul',
-            displayimg ='$img',
+            displayimg ='$cover',
             rating ='$rating',
             author ='$author',
             genre ='$genre',
-            release ='$release',
-            epublisher ='$epublisher',
-            summary ='$sumry' 
+            release ='$release_date',
+            epublisher ='$publisher',
+            summary ='$synopsis' 
         WHERE id=$id";
-    mysqli_query($db, $q);
+    mysqli_query($conn, $q);
 }
 ?>
 <!DOCTYPE html>
@@ -65,10 +63,10 @@ if (isset($_POST ['save'])){
     <form method="post">
       <div class="container">
         <table>
-          <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $data['displayimg'] ).'" width= "250px" height="370px"/>';?>
+          <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $data['cover'] ).'" width= "250px" height="370px"/>';?>
           <tr>
             <td>Title</td>
-            <td><input type="text" name="judul" value="<?php echo $data['title']; ?>"></td>
+            <td><input type="text" name="judul" value="<?php echo $data['judul']; ?>"></td>
           </tr>
           <tr>
             <td>Image</td>
@@ -87,15 +85,15 @@ if (isset($_POST ['save'])){
           </tr>
           <tr>
             <td>Release</td>
-            <td><input type="date" name="release" value="<?php echo $data['release']; ?>"></td>
+            <td><input type="date" name="release" value="<?php echo $data['release_date']; ?>"></td>
           </tr>
           <tr>
             <td>English Publisher</td>
-            <td><input type="text" name="epublisher" value="<?php echo $data['epublisher']; ?>"></td>
+            <td><input type="text" name="epublisher" value="<?php echo $data['publisher']; ?>"></td>
           </tr>
           <tr>
             <td>Summary</td>
-            <td><textarea name="summary" id="sumry" cols="50" rows="5"><?php echo $data['summary'];?></textarea></td>
+            <td><textarea name="summary" id="sumry" cols="50" rows="5"><?php echo $data['synopsis'];?></textarea></td>
           </tr>
           <tr>
             <td></td>

@@ -1,11 +1,8 @@
 <?php 
 include "head.php";
-$db = new mysqli("localhost","root", "", "cc"); 
-if ($db->connect_error) {  
-  die("Connection failed: " . $db->connect_error);  
-}
+require "config.php";
 $id = 1; //Sesuaikan dengan id manga
-$query = mysqli_query($db, "SELECT * FROM infokomik WHERE id = $id");
+$query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
 $data = mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html>
@@ -39,11 +36,11 @@ $data = mysqli_fetch_array($query);
   <body>
     <section>
       <p class="judul">
-        <?php echo $data['title']; ?><!-- Judul -->
+        <?php echo $data['judul']; ?><!-- Judul -->
       </p><hr>
       <div class="container">
         <table>
-          <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $data['displayimg'] ).'" width= "250px" height="370px"/>';?>
+          <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $data['cover'] ).'" width= "250px" height="370px"/>';?>
             <td>Rating</td>
             <td>:<?php echo $data['rating']; ?></td>
           </tr>
@@ -57,11 +54,11 @@ $data = mysqli_fetch_array($query);
           </tr>
           <tr>
             <td>Release</td>
-            <td>:<?php echo date("d-m-Y", strtotime($data['release'])); ?></td>
+            <td>:<?php echo date("d-m-Y", strtotime($data['release_date'])); ?></td>
           </tr>
           <tr>
             <td>English Publisher</td>
-            <td>:<?php echo $data['epublisher']; ?></td>
+            <td>:<?php echo $data['publisher']; ?></td>
           </tr>
         </table>
         <a href="index.php"><button>Read First</button></a>
@@ -73,7 +70,7 @@ $data = mysqli_fetch_array($query);
         SUMMARY
       </h1>
       <p>
-        <?php echo $data['summary']?> <!-- Synopsis manga -->
+        <?php echo $data['synopsis']?> <!-- Synopsis manga -->
       </p>
     </section>
   </body>
