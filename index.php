@@ -49,7 +49,7 @@ require "config.php";
     <?php foreach ($komik as $row) : ?>
       <div class="col">
       <div class="card" style="width: 18rem;">
-      <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
+      <a href=""><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "250px" height="370px" class="card-img-top"/>';?></a>
   <div class="card-body">
     <h5 class="card-title"><?= $row['judul']; ?> </h5>
   </div>
@@ -77,7 +77,7 @@ require "config.php";
     <?php foreach ($komik as $row) : ?>
       <div class="col">
       <div class="card" style="width: 18rem;">
-      <a href=""><img src="img/2.jpg" class="card-img-top" alt=""></a>
+      <a href=""><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "250px" height="370px" class="card-img-top"/>';?></a>
   <div class="card-body">
     <h5 class="card-title"><?= $row['judul']; ?> </h5>
   </div>

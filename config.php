@@ -17,8 +17,6 @@ $conn = mysqli_connect($server, $user, $password, $db);
 // $komik = mysqli_query($conn, "SELECT * FROM komik");
 
 
-// $conn = new mysqli($_SERVER['honbox.c9p2nzfuehbl.ap-southeast-1.rds.amazonaws.com'], $_SERVER['trigrd'], $_SERVER['byzantine123'], $_SERVER['honbox'], $_SERVER['3306']);
-
 function registrasi ($data) {
     global $conn;
     $username = strtolower(stripslashes($data["username"]));
@@ -53,20 +51,7 @@ function registrasi ($data) {
 
 }
 
-function tampil ($data){
-    global $conn;
-    $judul = $data["judul"];
-    $synopsis = $data["synopsis"];
-    $chapter = $data["chapter"];
-    $author = $data["author"];
-    $genre = $data["genre"];
-    $release_date = $data["release_date"];
-    $publisher = $data["publisher"];
-    $cover = $data["cover"];
 
-    $result = mysqli_query($conn, "SELECT * FROM komik");
-    
-}
 ?>   
 
    
