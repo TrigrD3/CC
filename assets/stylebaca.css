@@ -1,0 +1,106 @@
+.navbar-brand {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  min-height: 6000px;
+  background-color: #3c3c3c;
+  padding-top: 135px;
+}
+
+.fixed-top-2 {
+  margin-top: 56px;
+  padding-top: 25px;
+  padding-bottom: -25px;
+  z-index: 1;
+}
+
+.ddf {
+  z-index: 2;
+}
+
+.most-viewed h1 {
+  color: aliceblue;
+}
+
+.most-viewed hr {
+  color: aliceblue;
+}
+
+.new-released h1 {
+  color: aliceblue;
+}
+
+.new-released hr {
+  color: aliceblue;
+}
+
+.umum {
+  background-color: rgb(255, 255, 255, 25%);
+  border: 1px solid #03aeae;
+  font-family: "Khand";
+  color: white;
+}
+
+section {
+  padding: 2% 10% 2%;
+}
+
+.judul {
+  height: fit-content;
+  width: fit-content;
+  max-width: 100%;
+  padding: 3px 2% 3px 2%;
+  text-align: center;
+  margin-bottom: 2%;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.judul p {
+  margin: 0;
+}
+
+.editch {
+  width: 100%;
+  height: fit-content;
+  padding: 3% 5% 3% 5%;
+  border-radius: 20px;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(133, 131, 131);
+}
+
+a:active {
+  text-decoration: none;
+  color: white;
+}
+
+.chpter {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255, 25%);
+}
+
+.dropchp {
+  margin-right: 10px;
+}
+
+.dropstyle {
+  margin-right: 10px;
+}
+
+.prev {
+  margin-right: 10px;
+}
