@@ -9,7 +9,8 @@ if(!isset($_SESSION["login"])){
 
 include "head.php";
 require "config.php";
-
+$i = 0;
+$o = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +47,12 @@ require "config.php";
     <!-- perulangan untuk menampilkan data dari database -->
     
     <div class="row">
-    <?php foreach ($komik as $row) : ?>
+    <?php foreach ($komik as $row) :{
+      $i++;
+      if($i >4){
+        break;
+      }
+    } ?>
       <div class="col">
       <div class="card" style="width: 18rem;">
       <a href="infokomik.php?id=<?= $row['id']; ?>"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "250px" height="370px" class="card-img-top"/>';?></a>
@@ -55,9 +61,9 @@ require "config.php";
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <a href="#" class="card-link"><?= $row['synopsis']; ?></a> </li>
+      <a href="#" class="card-link text-decoration-none"><?= $row['author']; ?></a> </li>
       <li class="list-group-item">
-      <a href="#" class="card-link"><?= $row['chapter']; ?></a> </li>
+      <a href="#" class="card-link text-decoration-none"><?= $row['chapter']; ?></a> </li>
   </ul>
 </div>
     </div>
@@ -74,7 +80,12 @@ require "config.php";
     <h1>New Released</h1>
     <hr>
     <div class="row">
-    <?php foreach ($komik as $row) : ?>
+    <?php foreach ($komik as $row) :{
+      $o++;
+      if($o >4){
+        break;
+      }
+    } ?>
       <div class="col">
       <div class="card" style="width: 18rem;">
       <a href=""><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "250px" height="370px" class="card-img-top"/>';?></a>
@@ -83,9 +94,9 @@ require "config.php";
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <a href="#" class="card-link"><?= $row['synopsis']; ?></a> </li>
+      <a href="#" class="card-link text-decoration-none"><?= $row['author']; ?></a> </li>
       <li class="list-group-item">
-      <a href="#" class="card-link"><?= $row['chapter']; ?></a> </li>
+      <a href="#" class="card-link text-decoration-none"><?= $row['chapter']; ?></a> </li>
   </ul>
 </div>
     </div>
