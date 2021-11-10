@@ -5,13 +5,10 @@ $server = "localhost:$port";
 $user = "azure";
 $password = "6#vWHD_$";
 $db = "localdb";
-
-
 $conn = mysqli_connect($server, $user, $password, $db);
 
 // koneksi database lokal
 // $conn = mysqli_connect('localhost','root','');
-
 // mysqli_select_db($conn,'honbox');
 
 // var
@@ -55,17 +52,17 @@ function registrasi ($data) {
 
 }
 
-function cek_admin($username){
-    global $conn;
-    $stat = mysqli_query($conn,"SELECT * FROM users WHERE username = $username");
-    $status = mysqli_fetch_array($stat);
-    if($status['status'] == 1){
-        $_SESSION["admin"] = true;
-    }
-    else{
-        $_SESSION["admin"] = false;
-    }
-}
+// function cek_admin($username){
+//     global $conn;
+//     $stat = mysqli_query($conn,"SELECT * FROM users WHERE username = $username");
+//     $status = mysqli_fetch_array($stat);
+//     if($status['status'] == 1){
+//         $_SESSION["admin"] = true;
+//     }
+//     else{
+//         $_SESSION["admin"] = false;
+//     }
+// }
 
 function query($query){
     global $conn;

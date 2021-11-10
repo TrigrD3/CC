@@ -36,7 +36,7 @@ if (isset($_POST ["login"])){
       // set session
       $_SESSION["login"] = true;
       
-      cek_admin($username);
+      // cek_admin($username);
 
       header("Location: index.php");
       exit;
