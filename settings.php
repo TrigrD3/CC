@@ -1,5 +1,6 @@
 <?php 
-include "head.php"
+include "head.php";
+require "config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,12 +13,20 @@ include "head.php"
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 
-    
     <!-- My CSS -->
     <link rel="stylesheet" href="assets/Style.css" />
+
     <title>Setting</title>
 </head>
 <body>
+    <section >
+    <div class="container">
+    <h1 style="color:aliceblue"> User Setting</h1>
+    
+    <hr>
+</div>
+
+    </section>
 
 
 

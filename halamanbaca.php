@@ -1,14 +1,12 @@
 <?php 
 include "head.php";
-$db = new mysqli("localhost","root", "", "cc"); 
-if ($db->connect_error) {  
-  die("Connection failed: " . $db->connect_error);  
-}
+require "config.php";
+
 $id = 1; //Sesuaikan dengan id manga
 $chapter = 1;
-$query = mysqli_query($db, "SELECT * FROM infokomik WHERE id = $id");
+$query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
 $data = mysqli_fetch_array($query);
-$qchapter = mysqli_query($db, "SELECT chapter_number FROM chapter WHERE id_manga = '$id'");
+$qchapter = mysqli_query($conn, "SELECT chapter FROM isi_komik WHERE id = '$id'");
 $qdata = mysqli_fetch_array($qchapter);
 ?>
 <!DOCTYPE html>
@@ -41,15 +39,16 @@ $qdata = mysqli_fetch_array($qchapter);
   </head>
   <body>
     <section>
+
         <div class="umum judul">
             <p>
-                <b><?php echo $data['title']; ?> - Chapter <?php echo $chapter ?></b>
+                <b><?php echo $data['judul']; ?> - Chapter <?php echo $chapter ?></b>
             </p>
         </div>
         <div class="umum editch">
           <!-- Dropdown Chapter -->
             <p>
-                <b><a href="index.php">Home </a> / <a href="infokomik.php"><?php echo $data['title']; ?></a> / Chapter <?php echo $chapter ?></b>
+                <b><a href="index.php">Home </a> / <a href="infokomik.php?id=<?= $row['id']; ?>""><?php echo $data['judul']; ?></a> / Chapter <?php echo $chapter ?></b>
             </p>
             <div class="dropdownchp">
               <button class="btn btn-secondary dropdown-toggle dropchp" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -99,7 +98,11 @@ $qdata = mysqli_fetch_array($qchapter);
     </section>
     <section>
       <div class="image">
-          <img src="<?php echo $data['gambar'];?>" width="100%" height="2000px"
+          <?php 
+          foreach ($pages as $halaman): 
+          ?>
+          <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $halaman['pages'] ).'" width= "100%" height="auto" />';?>
+          <?php endforeach; ?>
       </div>
     </section>
   </body>

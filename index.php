@@ -63,7 +63,7 @@ $o = 0;
     <li class="list-group-item">
       <a href="#" class="card-link text-decoration-none"><?= $row['author']; ?></a> </li>
       <li class="list-group-item">
-      <a href="#" class="card-link text-decoration-none"><?= $row['chapter']; ?></a> </li>
+      <a href="#" class="card-link text-decoration-none"><?= $row['publisher']; ?></a> </li>
   </ul>
 </div>
     </div>
@@ -80,7 +80,7 @@ $o = 0;
     <h1>New Released</h1>
     <hr>
     <div class="row">
-    <?php foreach ($komik as $row) :{
+    <?php foreach ($komik2 as $row) :{
       $o++;
       if($o >4){
         break;
@@ -96,7 +96,7 @@ $o = 0;
     <li class="list-group-item">
       <a href="#" class="card-link text-decoration-none"><?= $row['author']; ?></a> </li>
       <li class="list-group-item">
-      <a href="#" class="card-link text-decoration-none"><?= $row['chapter']; ?></a> </li>
+      <a href="#" class="card-link text-decoration-none"><?= $row['publisher']; ?></a> </li>
   </ul>
 </div>
     </div>
