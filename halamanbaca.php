@@ -70,32 +70,20 @@ $qdata = mysqli_fetch_array($qchapter);
                 <li><a class="dropdown-item" href="#">Isi</a></li>
               </ul>
 
+              <!-- Next Chapter -->
+              <div class="btn-group next">
+              <button type="button" class="btn btn-danger">Next Chapter <i class="bi bi-arrow-right"></i></button>
+              </div>
+              <!-- Akhir Next Chapter -->
+
               <!-- Previous Chapter -->
-              <div class="btn-group prev">
+              <div class="btn-group me-2 prev">
               <button type="button" class="btn btn-danger"><i class="bi bi-arrow-left"></i>
               Prev Chapter</button>
               </div>
               <!-- Akhir Prev Chapter -->
-
-              <!-- Next Chapter -->
-              <div class="btn-group me-2 next">
-              <button type="button" class="btn btn-danger">Next Chapter <i class="bi bi-arrow-right"></i></button>
-              </div>
-              <!-- Akhir Next Chapter -->
             </div>
           <!-- Akhir Dropdown Chapter & Style-->
-
-          
-
-          
-
-
-
-
-
-
-
-
 
             <!-- <select name="chpter"> 
                 <option value="" disabled selected hidden>Chapter<?php ?></option>
@@ -107,6 +95,12 @@ $qdata = mysqli_fetch_array($qchapter);
 
             ?>
         </div>
+        
+    </section>
+    <section>
+      <div class="image">
+          <img src="<?php echo $data['gambar'];?>" width="100%" height="2000px"
+      </div>
     </section>
   </body>
 </html>
