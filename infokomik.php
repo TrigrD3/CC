@@ -65,9 +65,9 @@ $data = mysqli_fetch_array($query);
         </table>
         <a href="index.php"><button>Read First</button></a>
         <a href="index.php"><button>Read Last</button></a>
-        <?php  if ($_SESSION ["admin"]):?>
+
         <a href="editkomik.php?id=<?= $data['id'];?>"><button>Edit</button></a>
-        <?php endif;?>
+
       </div>
     </section>
     <section id="sec2">

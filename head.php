@@ -67,6 +67,7 @@
           <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-alarm-fill"></i> </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="settings.php">Settings</a></li>
+            <li><a class="dropdown-item" href="insertkomik.php">Tambah Komik</a></li>
             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
             
           </ul>
