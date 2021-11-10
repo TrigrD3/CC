@@ -1,9 +1,7 @@
 <?php 
 include "head.php";
 require "config.php";
-
 $id = $_GET['id']; //Sesuaikan dengan id manga
-$status = $_SESSION ['status'];
 $query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
 $data = mysqli_fetch_array($query);
 ?>
@@ -66,9 +64,9 @@ $data = mysqli_fetch_array($query);
         <a href="index.php"><button>Read First</button></a>
         
         <a href="index.php"><button>Read Last</button></a>
-        <?php  if ($status = 1){
-          echo "<a href='editkomik.php'><button>Edit</button></a>";
-          }?>
+        <?php foreach($komik as $row): ?>
+        <a href='editkomik.php?id=<?= $row['id']; ?>''><button>Edit</button></a>
+        <?php endforeach; ?>
       </div>
     </section>
     <section id="sec2">

@@ -2,7 +2,7 @@
 include "head.php";
 require "config.php";
 
-$id = 1; //Sesuaikan dengan id manga
+$id = $_GET['id']; //Sesuaikan dengan id manga
 $query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
 $data = mysqli_fetch_array($query);
 
