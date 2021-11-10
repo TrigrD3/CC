@@ -17,7 +17,6 @@ $komik2 = mysqli_query($conn, "SELECT * FROM komik ORDER BY id DESC");
 $pages = mysqli_query($conn, "SELECT pages FROM isi_komik");
 
 
-
 function registrasi ($data) {
     global $conn;
     $username = strtolower(stripslashes($data["username"]));
