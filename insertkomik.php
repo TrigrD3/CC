@@ -1,35 +1,22 @@
-<?php 
-include "config.php";
+<?php
 include "head.php";
+include "config.php";
 
-$id = $_GET['id']; //Sesuaikan dengan id manga
-$query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
-$data = mysqli_fetch_array($query);
-if (!empty($_POST)){
+
+if(!empty($_POST)){
     $judul= $_POST['judul'];
-    if(!empty($_FILES['image']['tmp_name'])){
-        $cover = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-        $q="UPDATE komik SET cover ='$cover' WHERE id=$id";
-        $query = mysqli_query($conn, $q);
-    }
+    $file= $_FILES['image']['tmp_name'];
     $rating= $_POST['rating'];
     $author= $_POST['author'];
     $genre= $_POST['genre'];
     $release_date= $_POST['release'];
     $publisher= $_POST['epublisher'];
     $synopsis = mysqli_real_escape_string($conn, $_POST['summary']);
-    $q="UPDATE komik
-        SET judul ='$judul',
-            rating ='$rating',
-            author ='$author',
-            genre ='$genre',
-            release_date ='$release_date',
-            publisher ='$publisher',
-            synopsis ='$synopsis' 
-        WHERE id=$id";
-    $query = mysqli_query($conn, $q);
-    $query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
-    $data = mysqli_fetch_array($query);
+
+    $q="INSERT INTO komik (judul,cover,rating,author,genre,release_date,publisher,synopsis)
+    VALUES ('$judul','$file','$rating','$author','$genre','$release_date','$publisher','$synopsis')";
+    $query=mysqli_query($conn, $q);
+
 }
 ?>
 <!DOCTYPE html>
@@ -58,17 +45,16 @@ if (!empty($_POST)){
 
     <!-- Font khand -->
     <link href='https://fonts.googleapis.com/css?family=Khand' rel='stylesheet'>
-    <title>Edit Komik</title>
+    <title>Tambah Komik</title>
   </head>
   <body>
     <section>
     <form action="" method="post" enctype="multipart/form-data">
       <div class="container">
         <table>
-          <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $data['cover'] ).'" width= "250px" height="370px"/>';?>
           <tr>
             <td>Title</td>
-            <td><input type="text" name="judul" value="<?php echo $data['judul']; ?>"></td>
+            <td><input type="text" name="judul"></td>
           </tr>
           <tr>
             <td>Image</td>
@@ -76,27 +62,27 @@ if (!empty($_POST)){
           </tr>
             <tr>
             <td>Rating</td>
-            <td><input type="text" name="rating" value="<?php echo $data['rating']; ?>"></td>
+            <td><input type="text" name="rating" ></td>
           </tr>
           <tr>
             <td>Author</td>
-            <td><input type="text" name="author" value="<?php echo $data['author']; ?>"></td>
+            <td><input type="text" name="author" ></td>
           </tr>
           <tr>
             <td>Genre</td>
-            <td><input type="text" name="genre" value="<?php echo $data['genre']; ?>"></td>
+            <td><input type="text" name="genre"></td>
           </tr>
           <tr>
             <td>Release</td>
-            <td><input type="date" name="release" value="<?php echo $data['release_date']; ?>"></td>
+            <td><input type="date" name="release"></td>
           </tr>
           <tr>
             <td>English Publisher</td>
-            <td><input type="text" name="epublisher" value="<?php echo $data['publisher']; ?>"></td>
+            <td><input type="text" name="epublisher"></td>
           </tr>
           <tr>
             <td>Summary</td>
-            <td><textarea name="summary" id="sumry" cols="50" rows="5"><?php echo $data['synopsis'];?></textarea></td>
+            <td><textarea name="summary" id="sumry" cols="50" rows="5"></textarea></td>
           </tr>
           <tr>
             <td></td>
