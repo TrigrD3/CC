@@ -1,24 +1,23 @@
 <?php 
 // koneksi database azure
-// $port = $_SERVER['WEBSITE_MYSQL_PORT'];
-// $server = "localhost:$port";
-// $user = "azure";
-// $password = "6#vWHD_$";
-// $db = "localdb";
+$port = $_SERVER['WEBSITE_MYSQL_PORT'];
+$server = "localhost:$port";
+$user = "azure";
+$password = "6#vWHD_$";
+$db = "localdb";
 
 
-// $conn = mysqli_connect($server, $user, $password, $db);
+$conn = mysqli_connect($server, $user, $password, $db);
 
 // koneksi database lokal
-$conn = mysqli_connect('localhost','root','');
+// $conn = mysqli_connect('localhost','root','');
 
-mysqli_select_db($conn,'honbox');
+// mysqli_select_db($conn,'honbox');
 
 // var
 $komik = mysqli_query($conn, "SELECT * FROM komik"); 
 $komik2 = mysqli_query($conn, "SELECT * FROM komik ORDER BY id DESC"); 
 $pages = mysqli_query($conn, "SELECT pages FROM isi_komik");
-
 
 
 function registrasi ($data) {
@@ -49,7 +48,7 @@ function registrasi ($data) {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // tambahkan userbaru ke database 
-    mysqli_query($conn, "INSERT INTO users VALUES(NULL,'$username','$email','$password','0')");
+    mysqli_query($conn, "INSERT INTO users VALUES(NULL,'$username','$email','$password','')");
     return mysqli_affected_rows($conn);
 
 
