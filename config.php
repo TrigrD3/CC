@@ -49,7 +49,7 @@ function registrasi ($data) {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // tambahkan userbaru ke database 
-    mysqli_query($conn, "INSERT INTO users VALUES(NULL,'$username','$email','$password','')");
+    mysqli_query($conn, "INSERT INTO users VALUES(NULL,'$username','$email','$password','0')");
     return mysqli_affected_rows($conn);
 
 
