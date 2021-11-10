@@ -20,6 +20,7 @@ $komik2 = mysqli_query($conn, "SELECT * FROM komik ORDER BY id DESC");
 $pages = mysqli_query($conn, "SELECT pages FROM isi_komik");
 
 
+
 function registrasi ($data) {
     global $conn;
     $username = strtolower(stripslashes($data["username"]));
@@ -48,10 +49,22 @@ function registrasi ($data) {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // tambahkan userbaru ke database 
-    mysqli_query($conn, "INSERT INTO users VALUES(NULL,'$username','$email','$password')");
+    mysqli_query($conn, "INSERT INTO users VALUES(NULL,'$username','$email','$password','')");
     return mysqli_affected_rows($conn);
 
 
+}
+
+function cek_admin($username){
+    global $conn;
+    $stat = mysqli_query($conn,"SELECT * FROM users WHERE username = $username");
+    $status = mysqli_fetch_array($stat);
+    if($status['status'] == 1){
+        $_SESSION["admin"] = true;
+    }
+    else{
+        $_SESSION["admin"] = false;
+    }
 }
 
 function query($query){

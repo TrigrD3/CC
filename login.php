@@ -2,12 +2,14 @@
 
 session_start();
 
+
 if(isset($_SESSION["login"])){
   header("Location: index.php");
   exit;
 }
 
 require 'config.php';
+
 
 if (isset($_POST["register"])) {
   if ( registrasi($_POST) > 0) {
@@ -20,11 +22,10 @@ if (isset($_POST["register"])) {
 }
 
 if (isset($_POST ["login"])){
+  
   $username = $_POST["username"];
   $password = $_POST["password"];
-
   $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
-
   //cek username 
   if (mysqli_num_rows($result) === 1){
 
@@ -34,8 +35,8 @@ if (isset($_POST ["login"])){
 
       // set session
       $_SESSION["login"] = true;
-
-
+      
+      cek_admin($username);
 
       header("Location: index.php");
       exit;

@@ -1,33 +1,35 @@
 <?php 
+include "config.php";
 include "head.php";
-require "config.php";
 
-$id = 1; //Sesuaikan dengan id manga
+$id = $_GET['id']; //Sesuaikan dengan id manga
 $query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
 $data = mysqli_fetch_array($query);
-
-if (isset($_POST ['save'])){
-    global $conn;
+if (!empty($_POST)){
     $judul= $_POST['judul'];
-    $cover= $_POST['image'];
+    if(!empty($_FILES['image']['tmp_name'])){
+        $cover = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+        $q="UPDATE komik SET cover ='$cover' WHERE id=$id";
+        $query = mysqli_query($conn, $q);
+    }
     $rating= $_POST['rating'];
     $author= $_POST['author'];
     $genre= $_POST['genre'];
     $release_date= $_POST['release'];
     $publisher= $_POST['epublisher'];
-    $synopsis= $_POST['summary'];
-
-    $q="UPDATE infokomik
-        SET title ='$judul',
-            displayimg ='$cover',
+    $synopsis = mysqli_real_escape_string($conn, $_POST['summary']);
+    $q="UPDATE komik
+        SET judul ='$judul',
             rating ='$rating',
             author ='$author',
             genre ='$genre',
-            release ='$release_date',
-            epublisher ='$publisher',
-            summary ='$synopsis' 
+            release_date ='$release_date',
+            publisher ='$publisher',
+            synopsis ='$synopsis' 
         WHERE id=$id";
-    mysqli_query($conn, $q);
+    $query = mysqli_query($conn, $q);
+    $query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
+    $data = mysqli_fetch_array($query);
 }
 ?>
 <!DOCTYPE html>
@@ -60,7 +62,7 @@ if (isset($_POST ['save'])){
   </head>
   <body>
     <section>
-    <form method="post">
+    <form action="" method="post" enctype="multipart/form-data">
       <div class="container">
         <table>
           <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $data['cover'] ).'" width= "250px" height="370px"/>';?>
@@ -72,6 +74,7 @@ if (isset($_POST ['save'])){
             <td>Image</td>
             <td><input type="file" name="image"></td>
           </tr>
+            <tr>
             <td>Rating</td>
             <td><input type="text" name="rating" value="<?php echo $data['rating']; ?>"></td>
           </tr>
@@ -97,7 +100,7 @@ if (isset($_POST ['save'])){
           </tr>
           <tr>
             <td></td>
-            <td><button id="save" name="save">Save</button></td>
+            <td><button type="submit">Save</button></td>
           </tr>
         </table>
       </div>
