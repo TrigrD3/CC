@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Khand");
+
+.umum {
+  background-color: rgb(60, 60, 60);
+  font-family: "Khand";
+  font-size: 36px;
+  color: white;
+}
+
+#menu li {
+  display: inline;
+}
+
+section {
+  padding: 2% 2% 2%;
+}
+
+table {
+  width: 88%;
+  border: 0px solid;
+  margin-left: 4.25%;
+  margin-right: auto;
+  margin-top: -1%;
+}
+
+td {
+  font-size: 30px;
+  color: rgb(155, 157, 158);
+}
+
+#i {
+  width: 91%;
+  margin-top: -3%;
+  margin-left: 2.5%;
+}
+
+hr {
+  width: 91%;
+  margin-top: 4%;
+  margin-left: 2.5%;
+}
+
+#detail {
+  font-size: 30px;
+  margin-left: 2.5%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.center-cropped {
+  width: 200px;
+  height: 200px;
+  object-position: center center;
+  object-fit: cover;
+  overflow: hidden;
+  margin-left: -2%;
+  margin-top: -2%;
+}
+
+.button {
+  background-color: #239d2f;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 3px 10px;
+}
+
+.button1 {
+  background-color: #c4c4c4;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 5px 65px;
+}
+
+#detail {
+  font-size: 30px;
+  margin-left: 0%;
+}
+
+#detail1 {
+  margin-left: 2.5%;
+}
+
+.input {
+  background-color: #c4c4c4;
+  border: none;
+  border-radius: 0px;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 5px 20px;
+}

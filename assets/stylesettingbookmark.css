@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Khand");
+
+.umum {
+  background-color: rgb(60, 60, 60);
+  font-family: "Khand";
+  font-size: 36px;
+  color: white;
+}
+
+#menu li {
+  display: inline;
+}
+
+section {
+  padding: 2% 2% 2%;
+}
+
+table {
+  width: 88%;
+  border: 0px;
+  margin-left: 4.25%;
+  margin-right: auto;
+  margin-top: -1%;
+  background-color: #949494;
+}
+
+table.table1 {
+  width: 88%;
+  border: 0px solid;
+  background-color: #3c3c3c;
+  margin-left: 4.25%;
+  margin-right: auto;
+  margin-top: 2%;
+
+  /*background: transparent; */
+}
+
+td {
+  font-size: 30px;
+  color: rgb(155, 157, 158);
+}
+
+#i {
+  width: 91%;
+  margin-top: -3%;
+  margin-left: 2.5%;
+}
+
+hr {
+  width: 91%;
+  margin-top: 4%;
+  margin-left: 2.5%;
+}
+
+#detail {
+  font-size: 30px;
+  margin-left: 2.5%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.image-cropped {
+  width: 169px;
+  height: 253px;
+  object-position: center center;
+  object-fit: cover;
+  overflow: hidden;
+  margin-left: -2%;
+  margin-top: -2%;
+}
+
+#chapter {
+  color: rgba(255, 255, 255, 50%);
+}
+
+#blank {
+  color: transparent;
+}
+
+.button1 {
+  background-color: #c4c4c4;
+  font-family: "Khand";
+  font-size: 36px;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  margin: 2px 2px;
+  cursor: pointer;
+  padding: 8px 30px;
+}
