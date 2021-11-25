@@ -78,7 +78,6 @@ if (isset($_POST ["login"])){
         <input type="password" name="password" required>
       </label>
       <button class="submit" name="login" type="btn btn-primary">Sign In</button>
-      <p class="forgot-pass">Forgot Password ?</p>
     </form>
     <div class="social-media">
         <ul>
