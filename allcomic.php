@@ -2,15 +2,10 @@
 
 session_start();
 
-if(!isset($_SESSION["login"])){
-  header("Location: login.php");
-  exit;
-}
 
 include "head.php";
 require "config.php";
-$i = 0;
-$o = 0;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,56 +33,17 @@ $o = 0;
     <title>Home</title>
   </head>
   <body>
-    <!-- most viewed -->
-    <section>
-<div class="most-viewed">
-  <div class="container">
-    <h1>Trending</h1>
-    <hr>
-    <!-- perulangan untuk menampilkan data dari database -->
-    
-    <div class="row">
-    <?php foreach ($komik as $row) :{
-      $i++;
-      if($i >4){
-        break;
-      }
-    } ?>
-      <div class="col">
-      <div class="card" style="width: 18rem;">
-      <a href="infokomik.php?id=<?= $row['id']; ?>"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "250px" height="370px" class="card-img-top"/>';?></a>
-  <div class="card-body">
-    <h5 class="card-title"><?= $row['judul']; ?> </h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a href="#" class="card-link text-decoration-none"><?= $row['author']; ?></a> </li>
-      <li class="list-group-item">
-      <a href="#" class="card-link text-decoration-none"><?= $row['publisher']; ?></a> </li>
-  </ul>
-</div>
-    </div>
-    <?php endforeach; ?>
-  </div>
-</div>
-    </section>
-    <!-- akhir most viewed -->
 
-    <!-- new released -->
-    <section>
+  <!-- all comic -->
+  <section>
 <div class="new-released">
   <div class="container">
-    <h1>New Released</h1>
+    <h1>All Comic</h1>
     <hr>
     <div class="row">
-    <?php foreach ($komik2 as $row) :{
-      $o++;
-      if($o >4){
-        break;
-      }
-    } ?>
+    <?php foreach ($komik as $row) : ?>
       <div class="col">
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 12rem ">
       <a href="infokomik.php?id=<?= $row['id']; ?>"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "250px" height="370px" class="card-img-top"/>';?></a>
   <div class="card-body">
     <h5 class="card-title"><?= $row['judul']; ?> </h5>
@@ -104,7 +60,6 @@ $o = 0;
       </div>
     </div>
     </section>
-  <!-- akhir new released -->
-
+  <!-- akhir all comic -->
   </body>
 </html>

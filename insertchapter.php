@@ -2,21 +2,18 @@
 include "head.php";
 include "config.php";
 
+$id = $_GET['id'];
+$query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
+$data = mysqli_fetch_array($query);
 
 if(!empty($_POST)){
     $judul= $_POST['judul'];
-    $file= $_FILES['image']['tmp_name'];
-    $rating= $_POST['rating'];
-    $author= $_POST['author'];
-    $genre= $_POST['genre'];
-    $release_date= $_POST['release'];
-    $publisher= $_POST['epublisher'];
-    $synopsis = mysqli_real_escape_string($conn, $_POST['summary']);
 
-    $file = base64_encode(file_get_contents($file));
+    $chapter= $_POST['chapter'];
 
-    $q="INSERT INTO komik (judul,cover,rating,author,genre,release_date,publisher,synopsis)
-    VALUES ('$judul','$file','$rating','$author','$genre','$release_date','$publisher','$synopsis')";
+    $file = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
+    $q="INSERT INTO isi_komik (judul,pages,chapter)
+    VALUES ('$judul','$file','$chapter')";
     $query=mysqli_query($conn, $q);
 
 }
@@ -56,35 +53,15 @@ if(!empty($_POST)){
         <table>
           <tr>
             <td>Title</td>
-            <td><input type="text" name="judul"></td>
+            <td><input type="text" name="judul" value="<?php echo $data['judul']; ?>"></td>
           </tr>
           <tr>
             <td>Image</td>
-            <td><input type="file" name="image"></td>
+            <td><input type="file" name="image" multiple></td>
           </tr>
             <tr>
-            <td>Rating</td>
-            <td><input type="text" name="rating" ></td>
-          </tr>
-          <tr>
-            <td>Author</td>
-            <td><input type="text" name="author" ></td>
-          </tr>
-          <tr>
-            <td>Genre</td>
-            <td><input type="text" name="genre"></td>
-          </tr>
-          <tr>
-            <td>Release</td>
-            <td><input type="date" name="release"></td>
-          </tr>
-          <tr>
-            <td>Publisher</td>
-            <td><input type="text" name="epublisher"></td>
-          </tr>
-          <tr>
-            <td>Summary</td>
-            <td><textarea name="summary" id="sumry" cols="50" rows="5"></textarea></td>
+            <td>chapter</td>
+            <td><input type="text" name="chapter" ></td>
           </tr>
           <tr>
             <td></td>
