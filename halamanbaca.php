@@ -3,11 +3,15 @@ include "head.php";
 require "config.php";
 
 $id = $_GET['id']; //Sesuaikan dengan id manga
-$chapter = 1;
+$chapter = $_GET['chapter'];
 $query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
 $data = mysqli_fetch_array($query);
 $qchapter = mysqli_query($conn, "SELECT chapter FROM isi_komik WHERE id = '$id'");
 $qdata = mysqli_fetch_array($qchapter);
+$pages = mysqli_query($conn, "SELECT pages FROM isi_komik WHERE chapter = '$chapter'");
+
+$qjudul = mysqli_query($conn, "SELECT judul FROM komik WHERE id = $id");
+$judul = mysqli_fetch_row($qjudul)[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,16 +63,7 @@ $qdata = mysqli_fetch_array($qchapter);
                 <li><a class="dropdown-item" href="#">Isi</a></li>
                 <li><a class="dropdown-item" href="#">Isi</a></li>
               </ul>
-              <!-- Dropdown Style -->
-              <button class="btn btn-secondary dropdown-toggle dropstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                List Style
-              </button>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Isi</a></li>
-                <li><a class="dropdown-item" href="#">Isi</a></li>
-                <li><a class="dropdown-item" href="#">Isi</a></li>
-              </ul>
-
+             
               <!-- Next Chapter -->
               <div class="btn-group next">
               <button type="button" class="btn btn-danger">Next Chapter <i class="bi bi-arrow-right"></i></button>
@@ -96,14 +91,14 @@ $qdata = mysqli_fetch_array($qchapter);
         </div>
         
     </section>
-    <section>
-      <div class="image">
+    <section >
+
           <?php 
           foreach ($pages as $halaman): 
           ?>
-          <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $halaman['pages'] ).'" width= "100%" height="auto" />';?>
+          <img src="<?php echo"komik/$judul/$chapter/".$halaman['pages']?>"  width= "100%" height="auto"alt=""  >
           <?php endforeach; ?>
-      </div>
+
     </section>
   </body>
 </html>

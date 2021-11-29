@@ -8,15 +8,46 @@ $data = mysqli_fetch_array($query);
 
 if(!empty($_POST)){
     $judul= $_POST['judul'];
-
     $chapter= $_POST['chapter'];
+    $direct = "komik/$judul/$chapter/";
 
-    $file = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
+    if (!is_dir($direct)){
+      mkdir($direct,0777,true);
+    }
+    
+    $extension=array('jpeg','jpg','png','gif');
+    
+    foreach ($_FILES['image']['tmp_name'] as $key => $value) {
+      $filename=$_FILES['image']['name'][$key];
+      $filename_tmp=$_FILES['image']['tmp_name'][$key];
+      echo '<br>';
+      $ext=pathinfo($filename,PATHINFO_EXTENSION);
+  
+      $finalimg='';
+      if(in_array($ext,$extension))
+      {
+        if(!file_exists("$direct".$filename))
+        {
+          
+        move_uploaded_file($filename_tmp, "$direct".$filename);
+        $finalimg=$filename;
+        }else
+        {
+           $filename=str_replace('.','-',basename($filename,$ext));
+           $newfilename=$filename.time().".".$ext;
+           move_uploaded_file($filename_tmp, "$direct".$newfilename);
+           $finalimg=$newfilename;
+        }
+
+
+
     $q="INSERT INTO isi_komik (judul,pages,chapter)
-    VALUES ('$judul','$file','$chapter')";
+    VALUES ('$judul','$finalimg','$chapter')";
     $query=mysqli_query($conn, $q);
 
-}
+      }
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +88,7 @@ if(!empty($_POST)){
           </tr>
           <tr>
             <td>Image</td>
-            <td><input type="file" name="image" multiple></td>
+            <td><input type="file" name="image[]" multiple></td>
           </tr>
             <tr>
             <td>chapter</td>

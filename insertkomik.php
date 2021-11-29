@@ -12,7 +12,12 @@ if(!empty($_POST)){
     $release_date= $_POST['release'];
     $publisher= $_POST['epublisher'];
     $synopsis = mysqli_real_escape_string($conn, $_POST['summary']);
-
+    // $ekstensi_allow = array('png', 'jpg', 'jpeg'); // ekstensi file yang dibolehkan
+    // $nama =  $_FILES['image']['name']; // mendapatkan nama file yang diupload
+    // $x = explode('.', $nama); //nama_file.jpg
+    // $ekstensi = strtolower(end($x));
+    // $ukuran = $_FILES['image']['size']; // mendapatkan ukuran file 
+    // $file_tmp = $_FILES['image']['tmp_name'];
     $file = base64_encode(file_get_contents($file));
 
     $q="INSERT INTO komik (judul,cover,rating,author,genre,release_date,publisher,synopsis)

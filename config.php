@@ -14,7 +14,7 @@ $conn = mysqli_connect($server, $user, $password, $db);
 // var
 $komik = mysqli_query($conn, "SELECT * FROM komik"); 
 $komik2 = mysqli_query($conn, "SELECT * FROM komik ORDER BY id DESC"); 
-$pages = mysqli_query($conn, "SELECT pages FROM isi_komik");
+
 
 
 function registrasi ($data) {

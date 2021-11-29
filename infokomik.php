@@ -6,6 +6,12 @@ require "config.php";
 $id = $_GET['id']; //Sesuaikan dengan id manga
 $query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
 $data = mysqli_fetch_array($query);
+
+// $qjudul = mysqli_query($conn, "SELECT judul FROM komik WHERE id = $id");
+// $judul = mysqli_fetch_row($qjudul);
+// var_dump($judul);
+$chapter = mysqli_query($conn, "SELECT chapter FROM isi_komik GROUP BY chapter ");
+$i = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,12 +85,20 @@ $data = mysqli_fetch_array($query);
       <h1>SUMMARY</h1>
       <p><?php echo $data['synopsis']?> <!-- Synopsis manga --></p>
       </div>
-
-      <div>
-      <h1>Chapters </h1>
-
+<div >
+    <h1>Chapters</h1>
+    <hr>
+    <div class="row">
+    <?php foreach ($chapter as $row) : {
+      
+      $i++;
+      }
+      ?>
+      
+      <a href="halamanbaca.php?id=<?php echo $id?>&chapter=<?= $row['chapter']; ?>"><button>Chapter <?php echo $i ?></button></a>
+        <?php endforeach; ?>
       </div>
-    
+
     </section>
   </body>
 </html>
