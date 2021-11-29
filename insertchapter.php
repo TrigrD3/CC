@@ -37,15 +37,16 @@ if(!empty($_POST)){
            $newfilename=$filename.time().".".$ext;
            move_uploaded_file($filename_tmp, "$direct".$newfilename);
            $finalimg=$newfilename;
+           
         }
+        $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $finalimg);
 
-
-
-    $q="INSERT INTO isi_komik (judul,pages,chapter)
-    VALUES ('$judul','$finalimg','$chapter')";
+    $q="INSERT INTO isi_komik (id,judul,pages,chapter,hal)
+    VALUES ('$id','$judul','$finalimg','$chapter','$withoutExt')";
     $query=mysqli_query($conn, $q);
-
+    
       }
+      echo "<script> document.location='index.php'</script>";
     }
   }
 ?>
@@ -92,7 +93,7 @@ if(!empty($_POST)){
           </tr>
             <tr>
             <td>chapter</td>
-            <td><input type="text" name="chapter" ></td>
+            <td><input type="text" name="chapter" required ></td>
           </tr>
           <tr>
             <td></td>

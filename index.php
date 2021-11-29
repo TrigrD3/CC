@@ -61,9 +61,9 @@ $o = 0;
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <a href="#" class="card-link text-decoration-none"><?= $row['author']; ?></a> </li>
+      <?= "Author : ".$row['author']; ?></li>
       <li class="list-group-item">
-      <a href="#" class="card-link text-decoration-none"><?= $row['publisher']; ?></a> </li>
+      <?= "Publisher : ".$row['publisher']; ?></li>
   </ul>
 </div>
     </div>
@@ -72,7 +72,7 @@ $o = 0;
 </div>
     </section>
     <!-- akhir most viewed -->
-
+<br>
     <!-- new released -->
     <section>
 <div class="new-released">
@@ -94,9 +94,9 @@ $o = 0;
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <a href="#" class="card-link text-decoration-none"><?= $row['author']; ?></a> </li>
+      <?= "Author : ".$row['author']; ?></li>
       <li class="list-group-item">
-      <a href="#" class="card-link text-decoration-none"><?= $row['publisher']; ?></a> </li>
+      <?= "Publisher : ".$row['publisher']; ?></li>
       </ul>
     </div>
         </div>

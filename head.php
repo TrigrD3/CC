@@ -40,8 +40,8 @@
         <!-- end dropdown 3 -->
       </ul>
       <!-- search button -->
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+      <form class="d-flex" action="search.php" metohd="post">
+        <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -49,7 +49,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-gear"></i> </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="halamansettingaccountsetting.php">Settings</a></li>
+            <!-- <li><a class="dropdown-item" href="halamansettingaccountsetting.php">Settings</a></li> -->
             <li><a class="dropdown-item" href="insertkomik.php">Tambah Komik</a></li>
             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
             

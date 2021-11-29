@@ -10,7 +10,9 @@ $data = mysqli_fetch_array($query);
 // $qjudul = mysqli_query($conn, "SELECT judul FROM komik WHERE id = $id");
 // $judul = mysqli_fetch_row($qjudul);
 // var_dump($judul);
-$chapter = mysqli_query($conn, "SELECT chapter FROM isi_komik GROUP BY chapter ");
+$chapter = mysqli_query($conn, "SELECT chapter FROM isi_komik WHERE id=$id  GROUP BY chapter");
+$lastch = mysqli_query($conn,"SELECT chapter FROM isi_komik WHERE id=$id ORDER BY chapter DESC LIMIT 1");
+$last = mysqli_fetch_array($lastch);
 $i = 0;
 ?>
 <!DOCTYPE html>
@@ -72,8 +74,8 @@ $i = 0;
             <td>: <?php echo $data['publisher']; ?></td>
           </tr>
         </table>
-        <a href="halamanbaca.php?id=<?= $data['id']; ?>"><button>Read First</button></a>
-        <a href="index.php"><button>Read Last</button></a>
+        <a href="halamanbaca.php?id=<?= $id ?>&chapter=1"><button>Read First</button></a>
+        <a href="halamanbaca.php?id=<?= $id ?>&chapter=<?= $last['chapter']; ?>"><button>Read Last</button></a>
 
         <a href="editkomik.php?id=<?= $data['id'];?>"><button>Edit</button></a>
         <a href="insertchapter.php?id=<?= $data['id'];?>"><button>Tambah Chapter</button></a>

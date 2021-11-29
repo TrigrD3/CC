@@ -43,16 +43,16 @@ require "config.php";
     <div class="row">
     <?php foreach ($komik as $row) : ?>
       <div class="col">
-      <div class="card" style="width: 12rem ">
-      <a href="infokomik.php?id=<?= $row['id']; ?>"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "250px" height="370px" class="card-img-top"/>';?></a>
+      <div class="card" style="width: 300px">
+      <a href="infokomik.php?id=<?= $row['id']; ?>"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "auto" height="370px" class="card-img-top"/>';?></a>
   <div class="card-body">
     <h5 class="card-title"><?= $row['judul']; ?> </h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a href="#" class="card-link text-decoration-none"><?= $row['author']; ?></a> </li>
       <li class="list-group-item">
-      <a href="#" class="card-link text-decoration-none"><?= $row['publisher']; ?></a> </li>
+      <?= "Author : ".$row['author']; ?></li>
+      <li class="list-group-item">
+      <?= "Publisher : ".$row['publisher']; ?></li>
       </ul>
     </div>
         </div>
