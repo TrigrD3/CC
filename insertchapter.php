@@ -46,7 +46,7 @@ if(!empty($_POST)){
     $query=mysqli_query($conn, $q);
     
       }
-      echo "<script> document.location='index.php'</script>";
+      echo "<script>window.location.href = 'infokomik.php?id='+$id;</script>";
     }
   }
 ?>
@@ -85,7 +85,7 @@ if(!empty($_POST)){
         <table>
           <tr>
             <td>Title</td>
-            <td><input type="text" name="judul" value="<?php echo $data['judul']; ?>"></td>
+            <td><input type="text" name="judul" readonly="readonly" value="<?php echo $data['judul']; ?>"></td>
           </tr>
           <tr>
             <td>Image</td>

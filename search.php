@@ -45,13 +45,9 @@ $searchdata = mysqli_fetch_array($search);
     }
     else {?>
     <div class="row">
-    <?php foreach ($search as $row) :{
-      $i++;
-      if($i >4){
-        break;
-      }
-    } ?>
-      <div class="col">
+    <?php foreach ($search as $row) :
+    ?>
+      <div class="col" style="height: 600px">
       <div class="card" style="width: 18rem;">
       <a href="infokomik.php?id=<?= $row['id']; ?>"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "250px" height="370px" class="card-img-top"/>';?></a>
   <div class="card-body">

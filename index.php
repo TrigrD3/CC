@@ -11,6 +11,8 @@ include "head.php";
 require "config.php";
 $i = 0;
 $o = 0;
+
+$trending=mysqli_query($conn,"SELECT * FROM komik ORDER BY rating DESC");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,18 +44,18 @@ $o = 0;
     <section>
 <div class="most-viewed">
   <div class="container">
-    <h1>Trending</h1>
+    <h1>Highest Rated</h1>
     <hr>
     <!-- perulangan untuk menampilkan data dari database -->
     
     <div class="row">
-    <?php foreach ($komik as $row) :{
+    <?php foreach ($trending as $row) :{
       $i++;
       if($i >4){
         break;
       }
     } ?>
-      <div class="col">
+      <div class="col" style="height: 600px">
       <div class="card" style="width: 18rem;">
       <a href="infokomik.php?id=<?= $row['id']; ?>"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "250px" height="370px" class="card-img-top"/>';?></a>
   <div class="card-body">

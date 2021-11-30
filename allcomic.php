@@ -42,7 +42,7 @@ require "config.php";
     <hr>
     <div class="row">
     <?php foreach ($komik as $row) : ?>
-      <div class="col">
+      <div class="col" style="height: 600px">
       <div class="card" style="width: 300px">
       <a href="infokomik.php?id=<?= $row['id']; ?>"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['cover'] ).'" width= "auto" height="370px" class="card-img-top"/>';?></a>
   <div class="card-body">
