@@ -46,7 +46,7 @@ $i=0;
     <title>Halaman Baca</title>
   </head>
   <body>
-    <section>
+    <section class="taskbar">
 
         <div class="umum judul">
             <p>

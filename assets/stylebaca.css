@@ -67,22 +67,22 @@ section {
   border-radius: 20px;
 }
 
-a:link {
+.taskbar a:link {
   text-decoration: none;
   color: white;
 }
 
-a:visited {
+.taskbar a:visited {
   text-decoration: none;
   color: white;
 }
 
-a:hover {
+.taskbar a:hover {
   text-decoration: none;
-  color: rgb(133, 131, 131);
+  color: rgb(194, 194, 194);
 }
 
-a:active {
+.taskbar a:active {
   text-decoration: none;
   color: white;
 }
