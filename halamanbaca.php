@@ -97,7 +97,7 @@ $i=0;
           <?php 
           foreach ($pages as $halaman): 
           ?>
-          <img src="<?php echo"komik/$judul/$chapter/".$halaman['pages']?>"  width= "1000px" height="auto"alt=""  >
+          <img src="<?php echo"komik/$judul/$chapter/".$halaman['pages']?>"  width= "75%" height="auto"alt=""  >
           <?php endforeach; ?>
 
     </section>
