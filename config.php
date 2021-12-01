@@ -1,15 +1,15 @@
 <?php 
 // koneksi database azure
-// $port = $_SERVER['WEBSITE_MYSQL_PORT'];
-// $server = "localhost:$port";
-// $user = "azure";
-// $password = "6#vWHD_$";
-// $db = "localdb";
-// $conn = mysqli_connect($server, $user, $password, $db);
+$port = $_SERVER['WEBSITE_MYSQL_PORT'];
+$server = "localhost:$port";
+$user = "azure";
+$password = "6#vWHD_$";
+$db = "localdb";
+$conn = mysqli_connect($server, $user, $password, $db);
 
 // koneksi database lokal
-$conn = mysqli_connect('localhost','root','');
-mysqli_select_db($conn,'honbox');
+// $conn = mysqli_connect('localhost','root','');
+// mysqli_select_db($conn,'honbox');
 
 // var
 $komik = mysqli_query($conn, "SELECT * FROM komik ORDER BY judul ASC"); 
