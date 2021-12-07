@@ -2786,32 +2786,32 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`username`,`email`,`password`,`status`) values 
-(1,'12','0','123',1),
-(2,'aara','arya@gmail.com','123',0),
-(3,'qwe','arya@gmail.com','$2y$10$otjWc6dy8zR.7F6MjQP1RuvijiEmBLeHe3UfQvBT6y749TuTKOePm',0),
-(4,'arya1','arya66151@gmail.com','$2y$10$35lAqhS3TXzJVajaV9zOtOLUYJXF2OrOAFBwVQjcqBHkaCsHrxe.e',0),
-(5,'qwer','qwer@gmail.com','$2y$10$Pfcl9OEtg58C00f1NLzNduGwCHdzrGwA3cgsp4wD2QruYgPzQPPZi',0),
-(6,'111','111@gmail.com','$2y$10$t3tl8Wrj/.pW/yHYe9K1TuxtHfGXqB9DIyicr0mVebh38/Ed.LUsq',0),
-(7,'','123@gmail.com','$2y$10$pSWy5b8nGLMms3RTRe3wLuNjcwB3YcRvQc4keuLa.e3VNgklCr/ee',0),
-(8,'123','123@gmail.com','$2y$10$.eQkidOCzU/4Zwk5r2KwEuVIqHlOhKn3SmFZoHd6oLgn5sr.imf9m',1),
-(9,'arya2311','123@gmail.com','$2y$10$A95uqk552AFwQqSORSTDseufX94KoK59xtg3bZlAe1q.8zZZK5SQ.',0),
-(10,'seanrcd','vincentius.sean@gmail.com','$2y$10$5Il0N0eYpc0PLWYBZ4dKDOKrRv2/q9.IDuNS0mHrwvT.rp37OWbLq',0),
-(11,'sean','sean.vincentius@gmail.com','$2y$10$PhZ.gJoI8KCFGsS6HQB0SuzHxHSZZCK7nYCd6g0r84HDy1c5ocDCC',0),
-(12,'aldo','aldo.kontol@gmail.com','$2y$10$x7yqnPombQfvsVeV.tKwGufu8SQwfiC1GAU8Vcnu0AwS2xpiwM6Bm',0),
-(13,'qwerty','123@gmail.com','$2y$10$Mq9tV6qEMDyYySeWT4ANNeouTNREZambS41YAWQa.793XVFnKj/Hu',0),
-(14,'asdf','arya@gmail.com','$2y$10$KcTK3n1oL3H3ipiwU.eDLuaUrnfOxzSyfDpcqwLG644.cFn18Yo1i',0),
-(15,'poi','12313@gmail.com','$2y$10$uxtDA64h/XTY8CxnASP01OCBBRLMsrH8fiZIvm7Up4.rMgu1Hcope',0),
-(16,'muk','1910817210004@mhs.ulm.ac.id','$2y$10$E5ot6o9Fl0LwfpYkal6iB.iB8WpRw7KfYBX0zCRAbwpwsZkNzADRK',0),
-(17,'zxcv','123@gmail.com','$2y$10$vO0KN.uPFujZRtYvq3OY3uCVJsRl38qgCFQ5y3wagy22cWosJOmM2',0),
-(18,'yui','123@gmail.com','$2y$10$qX6kRJqBmRY9pwOVkxyiHu5n..BpxwRLSs.oL9NGm4TZqriWhJAiS',0),
-(19,'!123@$','test@gmail.com','$2y$10$kyMKlcafbWPO1jRziWYr7uUE1xP7nObF.u0rypEQk9TaCLh1DkpIu',0);
+insert  into `users`(`id`,`username`,`email`,`password`) values 
+(1,'12','0','123'),
+(2,'aara','arya@gmail.com','123'),
+(3,'qwe','arya@gmail.com','$2y$10$otjWc6dy8zR.7F6MjQP1RuvijiEmBLeHe3UfQvBT6y749TuTKOePm'),
+(4,'arya1','arya66151@gmail.com','$2y$10$35lAqhS3TXzJVajaV9zOtOLUYJXF2OrOAFBwVQjcqBHkaCsHrxe.e'),
+(5,'qwer','qwer@gmail.com','$2y$10$Pfcl9OEtg58C00f1NLzNduGwCHdzrGwA3cgsp4wD2QruYgPzQPPZi'),
+(6,'111','111@gmail.com','$2y$10$t3tl8Wrj/.pW/yHYe9K1TuxtHfGXqB9DIyicr0mVebh38/Ed.LUsq'),
+(7,'','123@gmail.com','$2y$10$pSWy5b8nGLMms3RTRe3wLuNjcwB3YcRvQc4keuLa.e3VNgklCr/ee'),
+(8,'123','123@gmail.com','$2y$10$.eQkidOCzU/4Zwk5r2KwEuVIqHlOhKn3SmFZoHd6oLgn5sr.imf9m'),
+(9,'arya2311','123@gmail.com','$2y$10$A95uqk552AFwQqSORSTDseufX94KoK59xtg3bZlAe1q.8zZZK5SQ.'),
+(10,'seanrcd','vincentius.sean@gmail.com','$2y$10$5Il0N0eYpc0PLWYBZ4dKDOKrRv2/q9.IDuNS0mHrwvT.rp37OWbLq'),
+(11,'sean','sean.vincentius@gmail.com','$2y$10$PhZ.gJoI8KCFGsS6HQB0SuzHxHSZZCK7nYCd6g0r84HDy1c5ocDCC'),
+(12,'aldo','aldo.kontol@gmail.com','$2y$10$x7yqnPombQfvsVeV.tKwGufu8SQwfiC1GAU8Vcnu0AwS2xpiwM6Bm'),
+(13,'qwerty','123@gmail.com','$2y$10$Mq9tV6qEMDyYySeWT4ANNeouTNREZambS41YAWQa.793XVFnKj/Hu'),
+(14,'asdf','arya@gmail.com','$2y$10$KcTK3n1oL3H3ipiwU.eDLuaUrnfOxzSyfDpcqwLG644.cFn18Yo1i'),
+(15,'poi','12313@gmail.com','$2y$10$uxtDA64h/XTY8CxnASP01OCBBRLMsrH8fiZIvm7Up4.rMgu1Hcope'),
+(16,'muk','1910817210004@mhs.ulm.ac.id','$2y$10$E5ot6o9Fl0LwfpYkal6iB.iB8WpRw7KfYBX0zCRAbwpwsZkNzADRK'),
+(17,'zxcv','123@gmail.com','$2y$10$vO0KN.uPFujZRtYvq3OY3uCVJsRl38qgCFQ5y3wagy22cWosJOmM2'),
+(18,'yui','123@gmail.com','$2y$10$qX6kRJqBmRY9pwOVkxyiHu5n..BpxwRLSs.oL9NGm4TZqriWhJAiS'),
+(19,'!123@$','test@gmail.com','$2y$10$kyMKlcafbWPO1jRziWYr7uUE1xP7nObF.u0rypEQk9TaCLh1DkpIu'),
+(20,'udin','udin@gmail.com','$2y$10$zPK63CH4vv46r39BSG1FR.wMGalpzcaGp/Sh6GcxkUZ233IRgRq2K');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
