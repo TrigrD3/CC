@@ -5,13 +5,21 @@ include "head.php";
 
 $id = $_GET['id']; //Sesuaikan dengan id manga
 $chapter = $_GET['chapter'];
+
+if(!isset($_GET['hal'])){
+  $hal = 1;
+}
+else{
+  $hal = $_GET['hal'];
+}
+
 // $mode = $_GET['mode'];
 
 $query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
 $data = mysqli_fetch_array($query);
 $qchapter = mysqli_query($conn, "SELECT chapter FROM isi_komik WHERE id = '$id'");
 $qdata = mysqli_fetch_array($qchapter);
-$pages = mysqli_query($conn, "SELECT pages FROM isi_komik WHERE chapter = '$chapter' AND id = $id ORDER BY hal");
+
 $dropdownch= mysqli_query($conn, "SELECT chapter FROM isi_komik WHERE id = '$id' GROUP BY chapter");
 $last=mysqli_query($conn,"SELECT chapter FROM isi_komik WHERE id=$id ORDER BY chapter DESC LIMIT 1");
 $lastdata=mysqli_fetch_array($last);
@@ -19,6 +27,7 @@ $lastdata=mysqli_fetch_array($last);
 $qjudul = mysqli_query($conn, "SELECT judul FROM komik WHERE id = $id");
 $judul = mysqli_fetch_row($qjudul)[0];
 $i=0;
+$j=0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,18 +76,18 @@ $i=0;
               </button>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
                 <?php
-                foreach($dropdownch as $halaman):{
+                foreach($dropdownch as $ch):{
                   $i++;
                 }
                 ?>
-                <li><a class="dropdown-item" href="halamanbaca.php?id=<?php echo $id?>&chapter=<?= $halaman['chapter'];?>"><?= $halaman['chapter']?></a></li>
+                <li><a class="dropdown-item" href="halamanbaca.php?id=<?php echo $id?>&chapter=<?= $ch['chapter'];?>"><?= $ch['chapter']?></a></li>
                 <?php endforeach;?>
               </ul>
-             
+            
               <!-- Next Chapter -->
               <div class="btn-group next">
               <?php if($chapter != $lastdata['chapter']):?>
-              <a href="halamanbaca.php?id=<?php echo $id?>&chapter=<?= $chapter+1?>"><button type="button" class="btn btn-danger">Next Chapter <i class="bi bi-arrow-right"></i></button></a>
+              <a href="halamanbaca2.php?id=<?php echo $id?>&chapter=<?= $chapter+1?>"><button type="button" class="btn btn-danger">Next Chapter <i class="bi bi-arrow-right"></i></button></a>
               </div>
               <?php endif;?>
               <!-- Akhir Next Chapter -->
@@ -86,7 +95,7 @@ $i=0;
               <!-- Previous Chapter -->
               <div class="btn-group me-2 prev">
               <?php if($chapter!=1):?>
-              <a href="halamanbaca.php?id=<?php echo $id?>&chapter=<?= $chapter-1?>"><button type="button" class="btn btn-danger"><i class="bi bi-arrow-left"></i>
+              <a href="halamanbaca2.php?id=<?php echo $id?>&chapter=<?= $chapter-1?>"><button type="button" class="btn btn-danger"><i class="bi bi-arrow-left"></i>
               Prev Chapter</button></a>
               <?php endif;?>
               </div>
@@ -96,9 +105,24 @@ $i=0;
         
     </section>
     <section id="tampilan">
-          <?php foreach ($pages as $halaman): ?>
-          <img src="<?php echo"komik/$judul/$chapter/".$halaman['pages']?>"  width= "75%" height="auto"alt=""  >
-          <?php endforeach; ?>
+          <?php
+              $read = mysqli_query($conn, "SELECT pages FROM isi_komik WHERE chapter = '$chapter' AND id = $id AND hal=$hal");
+              $readdata = mysqli_fetch_array($read);
+              $lasthal = mysqli_query($conn, "SELECT hal FROM isi_komik WHERE chapter = '$chapter' AND id = $id ORDER BY hal DESC LIMIT 1");
+              $lasthaldata = mysqli_fetch_array($lasthal);
+          ?>
+          <img src="<?php echo"komik/$judul/$chapter/".$readdata['pages']?>"  width= "75%" height="auto"alt="">
+
+          <?php if($hal!=1): ?>
+          <button class="btn">Prev Page</button>
+          <?php endif; ?>
+          
+          <p><?= $hal ?> of <?= $lasthaldata['hal'] ?></p>
+
+          <?php if($hal!=$lasthaldata['hal']): ?>
+          <a href="halamanbaca2.php/id=<?= $id ?>&chapter=<?= $chapter ?>&hal=<?= $hal+1?>"><button class="btn">Next Page</button></a>
+          <?php endif; ?>
+          
     </section>
 
     <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/ArrowUp.png" class="arrow"></button>

@@ -1,10 +1,8 @@
 <?php 
 
-session_start();
-
-
-include "head.php";
 require "config.php";
+include "head.php";
+
 
 ?>
 <!DOCTYPE html>

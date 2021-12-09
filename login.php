@@ -1,7 +1,5 @@
 <?php 
 
-session_start();
-
 
 if(isset($_SESSION["login"])){
   header("Location: index.php");
@@ -36,7 +34,7 @@ if (isset($_POST ["login"])){
       // set session
       $_SESSION["login"] = true;
       
-      // cek_admin($username);
+      $_SESSION["status"] = $row["status"];
 
       header("Location: index.php");
       exit;
@@ -79,6 +77,7 @@ if (isset($_POST ["login"])){
       </label>
       <button class="submit" name="login" type="btn btn-primary">Sign In</button>
     </form>
+    <a href="forgotpass.php"><button class="submit" name="frgt" type="btn btn-primary">Forgot Password</button></a>
     <div class="social-media">
         <ul>
           <!-- <li><img src="images/facebook.png"></li>

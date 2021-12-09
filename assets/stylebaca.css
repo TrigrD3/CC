@@ -116,7 +116,10 @@ section {
 #tampilan {
   text-align: center;
 }
-
+#tampilan2 {
+  text-align: center;
+  display: inline;
+}
 #myBtn {
   display: none;
   position: fixed;

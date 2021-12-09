@@ -1,20 +1,26 @@
 <?php
-include "head.php";
 include "config.php";
+include "head.php";
 
 
 if(!empty($_POST)){
     $judul= $_POST['judul'];
-    $rating= $_POST['rating'];
-    $author= $_POST['author'];
-    $genre= $_POST['genre'];
-    $release_date= $_POST['release'];
-    $publisher= $_POST['epublisher'];
-    $synopsis = mysqli_real_escape_string($conn, $_POST['summary']);
-    if(!empty($_FILES['image']['tmp_name'])){
-      $cover = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-      $q="INSERT INTO komik (judul,cover,rating,author,genre,release_date,publisher,synopsis) VALUES ('$judul','$cover','$rating','$author','$genre','$release_date','$publisher','$synopsis')";
-      $query = mysqli_query($conn, $q);
+    $jdl=mysqli_query($conn, "SELECT * FROM komik WHERE judul='$judul'");
+    if (mysqli_num_rows($jdl) === 1){
+      echo "<script> alert('Manga sudah terdaftar!'); </script>";
+    }
+    else {
+      $rating= $_POST['rating'];
+      $author= $_POST['author'];
+      $genre= $_POST['genre'];
+      $release_date= $_POST['release'];
+      $publisher= $_POST['epublisher'];
+      $synopsis = mysqli_real_escape_string($conn, $_POST['summary']);
+        if(!empty($_FILES['image']['tmp_name'])){
+          $cover = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+          $q="INSERT INTO komik (judul,cover,rating,author,genre,release_date,publisher,synopsis) VALUES ('$judul','$cover','$rating','$author','$genre','$release_date','$publisher','$synopsis')";
+          $query = mysqli_query($conn, $q);
+        }
     }
 }
 ?>
@@ -53,35 +59,35 @@ if(!empty($_POST)){
         <table>
           <tr>
             <td>Title</td>
-            <td><input type="text" name="judul"></td>
+            <td><input type="text" name="judul" required></td>
           </tr>
           <tr>
             <td>Image</td>
-            <td><input type="file" name="image"></td>
+            <td><input type="file" name="image" required></td>
           </tr>
             <tr>
             <td>Rating</td>
-            <td><input type="text" name="rating" ></td>
+            <td><input type="text" name="rating" required></td>
           </tr>
           <tr>
             <td>Author</td>
-            <td><input type="text" name="author" ></td>
+            <td><input type="text" name="author" required></td>
           </tr>
           <tr>
             <td>Genre</td>
-            <td><input type="text" name="genre"></td>
+            <td><input type="text" name="genre" required></td>
           </tr>
           <tr>
             <td>Release</td>
-            <td><input type="date" name="release"></td>
+            <td><input type="date" name="release" required></td>
           </tr>
           <tr>
             <td>Publisher</td>
-            <td><input type="text" name="epublisher"></td>
+            <td><input type="text" name="epublisher" required></td>
           </tr>
           <tr>
             <td>Summary</td>
-            <td><textarea name="summary" id="sumry" cols="50" rows="5"></textarea></td>
+            <td><textarea name="summary" id="sumry" cols="50" rows="5" required></textarea></td>
           </tr>
           <tr>
             <td></td>

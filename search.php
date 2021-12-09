@@ -1,8 +1,7 @@
 <?php 
-
-session_start();
-include "head.php";
 require "config.php";
+include "head.php";
+
 $i = 0;
 $value=$_GET['search'];
 $search = mysqli_query($conn,"SELECT * FROM komik WHERE judul LIKE '%" . $value . "%' ");

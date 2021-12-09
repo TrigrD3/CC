@@ -1,7 +1,6 @@
 <?php 
-session_start();
-include "head.php";
 require "config.php";
+include "head.php";
 
 $id = $_GET['id']; //Sesuaikan dengan id manga
 $query = mysqli_query($conn, "SELECT * FROM komik WHERE id = $id");
@@ -47,7 +46,7 @@ $i = 0;
     <title>Info Komik</title>
   </head>
   <body>
-    <section>
+    <section id="sectioninfo">
       <p class="judul">
         <?php echo $data['judul']; ?><!-- Judul -->
       </p><hr>
@@ -74,12 +73,14 @@ $i = 0;
             <td>: <?php echo $data['publisher']; ?></td>
           </tr>
         </table>
+        <?php if($_SESSION["status"] == 1 || $_SESSION["status"] == 2): ?>
         <a href="halamanbaca.php?id=<?= $id ?>&chapter=1"><button>Read First</button></a>
         <a href="halamanbaca.php?id=<?= $id ?>&chapter=<?= $last['chapter']; ?>"><button>Read Last</button></a>
-
+        <?php endif; ?>
+        <?php if($_SESSION["status"] == 1): ?>
         <a href="editkomik.php?id=<?= $data['id'];?>"><button>Edit</button></a>
-        <a href="insertchapter.php?id=<?= $data['id'];?>"><button>Tambah Chapter</button></a>
-
+        <a href="insertchapter.php?id=<?= $data['id'];?>&judul=<?= $data['judul'];?>"><button>Add Chapter</button></a>
+        <?php endif; ?>
       </div>
     </section>
     <section id="sec2">
@@ -90,6 +91,10 @@ $i = 0;
 <div >
     <h1>Chapters</h1>
     <hr>
+    <?php if($_SESSION["status"] == 0):?>
+      <h1 style="text-align: center">Login to start reading!</h1>
+    <?php endif; ?>
+    <?php if($_SESSION["status"] == 1 || $_SESSION["status"] == 2): ?>
     <div class="row">
     <?php foreach ($chapter as $row) : {
       
@@ -100,7 +105,7 @@ $i = 0;
       <a href="halamanbaca.php?id=<?php echo $id?>&chapter=<?= $row['chapter']; ?>"><button>Chapter <?php echo $i ?></button></a>
         <?php endforeach; ?>
       </div>
-
+    <?php endif; ?>
     </section>
   </body>
 </html>

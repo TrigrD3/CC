@@ -1,14 +1,11 @@
 <?php 
+require "config.php";
+include "head.php";
 
-session_start();
-
-if(!isset($_SESSION["login"])){
-  header("Location: login.php");
-  exit;
+if(!isset($_SESSION["status"])){
+  $_SESSION["status"] = 0;
 }
 
-include "head.php";
-require "config.php";
 $i = 0;
 $o = 0;
 

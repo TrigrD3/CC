@@ -80,3 +80,8 @@ img {
   padding: 0 10% 10%;
   overflow-wrap: break-word;
 }
+
+#sectioninfo {
+  height: 80%;
+  width: auto;
+}

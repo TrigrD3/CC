@@ -51,8 +51,19 @@
           <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-gear"></i> </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <!-- <li><a class="dropdown-item" href="halamansettingaccountsetting.php">Settings</a></li> -->
+            <?php 
+
+            if(!isset($_SESSION["login"])){
+              $_SESSION["login"] = false;
+            }
+
+            if($_SESSION["login"] == false):?>
+            <li><a class="dropdown-item" href="login.php">Login or Signup</a></li>
+            <?php endif;?>
             <li><a class="dropdown-item" href="insertkomik.php">Tambah Komik</a></li>
+            <?php if($_SESSION["login"] == true):?>
             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+            <?php endif;?>
             
           </ul>
         </li>
