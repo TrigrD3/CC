@@ -16,11 +16,12 @@ if (isset($_POST ["submit"])){
     $headers = "From: vincentius.sean@gmail.com" . "\r\n" . "CC: $emailto";
 
     mail($emailto,$subject,$txt,$headers);
+    header("Location: login.php");
+    exit;
   }
-
-  echo "<script>alert('Theres no email found');</script>";
-
-
+  else{
+    echo "<script>alert('Theres no email found');</script>";
+  }
 }
 
 
