@@ -68,7 +68,7 @@
             }
             
             if($_SESSION["status"] == 1):?>
-            <li><a class="dropdown-item" href="insertkomik.php">Tambah Komik</a></li>
+            <li><a class="dropdown-item" href="insertkomik.php">Add Comic</a></li>
             <?php endif;?>
 
             <?php if($_SESSION["login"] == true):?>
