@@ -14,11 +14,9 @@ if (isset($_POST ["submit"])){
     $subject = "Reset Password";
     $txt = "Dear $username, <br><br> Heres the link to reset your password <a href='https://honbox.azurewebsites.net/resetpass.php'>Reset Password</a>";
     $headers = "From: vincentius.sean@gmail.com" . "\r\n" . "CC: $emailto";
-
     mail($emailto,$subject,$txt,$headers);
+
     echo "<script>alert('Please check your email!');</script>";
-    header("Location: login.php");
-    exit;
   }
   else{
     echo "<script>alert('Theres no email found');</script>";
@@ -46,8 +44,8 @@ if (isset($_POST ["submit"])){
         <input type="email" name="email" required>
       </label>
       <button class="submit" name="submit" type="btn btn-primary">Submit</button>
-      <a href="login.php"><button class="submit" name="cancel" type="btn btn-primary">Cancel</button></a>
     </form>
+    <a href="login.php"><button class="submit" name="back" type="btn btn-primary">Go Back</button></a>
     </div>
 </body>
 </html>
