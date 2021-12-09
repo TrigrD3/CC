@@ -34,7 +34,10 @@ body {
   color: aliceblue;
 }
 
-.aboutus img {
-  height: 250px;
-  width: 18rem;
+.person-img {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  border-radius: 50%;
+  background-position: center;
 }
