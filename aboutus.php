@@ -43,7 +43,7 @@ include "head.php";
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/arya.jpg" class="card-img-top" alt="..." ">
                 <div class="card-body">
-                    <p class="card-text">Nama: Muhammad Jatmika Aryaputra</p>
+                    <p class="card-text">Name: Muhammad Jatmika Aryaputra</p>
                     <p class="card-text">email: 1910817210004@mhs.ulm.ac.id</p>
                 </div>
                 </div>
@@ -53,7 +53,7 @@ include "head.php";
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/aldo.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Nama: Aldo Savero</p>
+                    <p class="card-text">Name: Aldo Savero</p>
                     <p class="card-text">email: 1910817310007@mhs.ulm.ac.id</p>
                 </div>
                 </div>
@@ -63,7 +63,7 @@ include "head.php";
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/jessica.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Nama: Eugynia Jessica Virgynia Rahman</p>
+                    <p class="card-text">Name: Eugynia Jessica Virgynia Rahman</p>
                     <p class="card-text">email: 1910817220013@mhs.ulm.ac.id</p>
                 </div>
                 </div>
@@ -74,7 +74,7 @@ include "head.php";
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/jeremy.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Nama: Jeremy Antonio</p>
+                    <p class="card-text">Name: Jeremy Antonio</p>
                     <p class="card-text">email: 1910817310011@mhs.ulm.ac.id</p>
                 </div>
                 </div>
@@ -84,7 +84,7 @@ include "head.php";
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/razaq.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Nama: Muhammad Razaq Lazuardi</p>
+                    <p class="card-text">Name: Muhammad Razaq Lazuardi</p>
                     <p class="card-text">email: 1910817310010@mhs.ulm.ac.id</p>
                 </div>
                 </div>
@@ -94,7 +94,7 @@ include "head.php";
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/sean.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Nama: Sean Richard Sindunata</p>
+                    <p class="card-text">Name: Sean Richard Sindunata</p>
                     <p class="card-text">email: 1910817210020@mhs.ulm.ac.id</p>
                 </div>
                 </div>

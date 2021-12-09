@@ -27,7 +27,7 @@ function registrasi ($data) {
     $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
     if(mysqli_fetch_assoc($result)){
         echo "<script>
-                alert('username  sudah terdaftar!')
+                alert('username already registered!')
             </script>";
             return false;
     }
@@ -35,7 +35,7 @@ function registrasi ($data) {
     // cek konfirmasi password
     if($password !== $passwordconf) {
         echo "<script>
-            alert('konfirmasi password tidak sesuai!');
+            alert('password does not matched!');
         </script>";
         return false;
     }
