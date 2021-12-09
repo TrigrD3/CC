@@ -2,27 +2,6 @@
 
 require 'config.php';
 
-if (isset($_POST ["submit"])){
-  
-  $emailto = $_POST["email"];
-  $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$emailto'");
-  //cek email
-  if (mysqli_num_rows($result) === 1){
-
-    $row = mysqli_fetch_assoc($result);
-    $username = $row['username'];
-    $subject = "Reset Password";
-    $txt = "Dear $username, <br><br> Heres the link to reset your password <a href='https://honbox.azurewebsites.net/resetpass.php'>Reset Password</a>";
-    $headers = "From: vincentius.sean@gmail.com" . "\r\n" . "CC: $emailto";
-    mail($emailto,$subject,$txt,$headers);
-
-    echo "<script>alert('Please check your email!');</script>";
-  }
-  else{
-    echo "<script>alert('Theres no email found');</script>";
-  }
-}
-
 
 ?>
 <!DOCTYPE html>
@@ -40,10 +19,17 @@ if (isset($_POST ["submit"])){
      
       <h2>Forgot Password?</h2>
       <label>
-        <span>E-mail Address associated with account</span>
-        <input type="email" name="email" required>
+        <p>Please Contact Administrator:</p>
+        <ul >
+          <li>1910817310007@mhs.ulm.ac.id</li>
+          <li>1910817220013@mhs.ulm.ac.id</li>
+          <li>1910817310011@mhs.ulm.ac.id</li>
+          <li>1910817210004@mhs.ulm.ac.id</li>
+          <li>1910817310010@mhs.ulm.ac.id</li>
+          <li>1910817210020@mhs.ulm.ac.id</li>
+        </ul>
+
       </label>
-      <button class="submit" name="submit" type="btn btn-primary">Submit</button>
     </form>
     <a href="login.php"><button class="submit" name="back" type="btn btn-primary">Go Back</button></a>
     </div>
