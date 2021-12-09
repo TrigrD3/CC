@@ -60,7 +60,15 @@
             if($_SESSION["login"] == false):?>
             <li><a class="dropdown-item" href="login.php">Login or Signup</a></li>
             <?php endif;?>
+
+            <?php if(!isset($_SESSION["status"])){
+            $_SESSION["status"] = 0;
+            }
+            
+            if($_SESSION["status"] == 1):?>
             <li><a class="dropdown-item" href="insertkomik.php">Tambah Komik</a></li>
+            <?php endif;?>
+
             <?php if($_SESSION["login"] == true):?>
             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
             <?php endif;?>
