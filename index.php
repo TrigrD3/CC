@@ -104,10 +104,6 @@ $trending=mysqli_query($conn,"SELECT * FROM komik ORDER BY rating DESC");
     </div>
     </section>
   <!-- akhir new released -->
-<section>
 
-<a href="aboutus.php"><button type="button" class="btn text-center" style="color: aliceblue; ">About Us</button></a>
-
-</section>
   </body>
 </html>

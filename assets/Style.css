@@ -33,3 +33,8 @@ body {
 .new-released hr {
   color: aliceblue;
 }
+
+.aboutus img {
+  height: 250px;
+  width: 18rem;
+}

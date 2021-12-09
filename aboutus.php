@@ -30,20 +30,21 @@ include "head.php";
     <title>Home</title>
   </head>
   <body>
-      <section>
+      <section class="aboutus">
           <div class="container">
-          <div class="row text-center mb-3">
+          <div class="row text-center ">
           <div class="col">
-            <h2 style="color: aliceblue;">Honbox is a website that allow the user to read comics online developed by: </h2>
+              <h2 style="color: aliceblue;"><b>Honbox is a website that allow the user to read comics online developed by: </b></h2>
+            
             <p></p>
           </div>
         </div>
           <div class="row text-center mb-3 ">
-              <div class="col-md-4 fs-6 text-center">
+              <div class="col fs-6 text-center">
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/arya.jpg" class="card-img-top" alt="..." ">
                 <div class="card-body">
-                    <p class="card-text">Name: Muhammad Jatmika Aryaputra</p>
+                    <p class="card-text">Muhammad Jatmika Aryaputra</p>
                     <p class="card-text">email: 1910817210004@mhs.ulm.ac.id</p>
                 </div>
                 </div>
@@ -53,7 +54,7 @@ include "head.php";
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/aldo.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Name: Aldo Savero</p>
+                    <p class="card-text">Aldo Savero</p>
                     <p class="card-text">email: 1910817310007@mhs.ulm.ac.id</p>
                 </div>
                 </div>
@@ -63,18 +64,18 @@ include "head.php";
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/jessica.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Name: Eugynia Jessica Virgynia Rahman</p>
+                    <p class="card-text">Eugynia Jessica Virgynia Rahman</p>
                     <p class="card-text">email: 1910817220013@mhs.ulm.ac.id</p>
                 </div>
                 </div>
               </div>
           </div>
-          <div class="row text-center mb-3">
+          <div class="row text-center ">
           <div class="col-md-4 fs-6 text-center">
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/jeremy.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Name: Jeremy Antonio</p>
+                    <p class="card-text">Jeremy Antonio</p>
                     <p class="card-text">email: 1910817310011@mhs.ulm.ac.id</p>
                 </div>
                 </div>
@@ -84,7 +85,7 @@ include "head.php";
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/razaq.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Name: Muhammad Razaq Lazuardi</p>
+                    <p class="card-text">Muhammad Razaq Lazuardi</p>
                     <p class="card-text">email: 1910817310010@mhs.ulm.ac.id</p>
                 </div>
                 </div>
@@ -94,7 +95,7 @@ include "head.php";
                 <div class="card" style="width: 18rem;">
                 <img src="img/profile/sean.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Name: Sean Richard Sindunata</p>
+                    <p class="card-text">Sean Richard Sindunata</p>
                     <p class="card-text">email: 1910817210020@mhs.ulm.ac.id</p>
                 </div>
                 </div>
