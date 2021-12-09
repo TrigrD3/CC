@@ -16,6 +16,7 @@ if (isset($_POST ["submit"])){
     $headers = "From: vincentius.sean@gmail.com" . "\r\n" . "CC: $emailto";
 
     mail($emailto,$subject,$txt,$headers);
+    echo "<script>alert('Please check your email!');</script>";
     header("Location: login.php");
     exit;
   }
